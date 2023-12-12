@@ -1,8 +1,12 @@
 Depends:
     R (>= 4.0.0)
+    BiocManager (>= 1.30.22)
 Imports:
     Seurat (>= 5.0.1),
     Matrix (>= 1.6.4)
+    GEOquery (>= 2.70.0)
+    here (>=1.0.1)
+    readr (>= 2.1.4)
 Remotes:
     cran::renv
     
