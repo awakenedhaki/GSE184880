@@ -40,7 +40,11 @@ find "$target_directory" -maxdepth 1 -type f -name "GSM*.gz" \
       sample_accession_number=$(basename $file | grep -o 'GSM[0-9]*')
   
       # Remove the specified pattern from the filename
-      new_name=$(echo $file | sed -E "s/GSM[0-9]*_(Cancer|Norm)[0-9]+\.//")
+      # . If new name has substring "genes", replace with "features"
+      new_name=$(echo $file \
+        | sed -E "s/GSM[0-9]*_(Cancer|Norm)[0-9]+\.//" \
+        | sed 's/genes/features/'
+      )
       
       # Change name of current file to the new name
       mv $file $new_name
