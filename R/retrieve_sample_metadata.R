@@ -26,6 +26,9 @@ pruned_sample_metadata <- sample_metadata[columns]
 # Rename columns
 colnames(pruned_sample_metadata) <- names(columns)
 
+# Remove "age: " prefix
+pruned_sample_metadata$age <- gsub("age: ", "", pruned_sample_metadata$age)
+
 # Save sample metadata
 write_csv(pruned_sample_metadata, here("data", "sample_metadata.csv"))
 
