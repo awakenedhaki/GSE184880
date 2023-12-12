@@ -2,9 +2,10 @@
 
 # `wget` parameters
 # . Data retrieval
+gse_accession="GSE184880"
 output_dir="data/"
-output_name="GSE184880.tar"
-URL="https://www.ncbi.nlm.nih.gov/geo/download/?acc=GSE184880&format=file"
+output_name="${gse_accession}.tar"
+URL="https://www.ncbi.nlm.nih.gov/geo/download/?acc=${gse_accession}&format=file"
 
 # . Logging
 log_dir="log/"
